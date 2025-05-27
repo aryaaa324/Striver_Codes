@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+// Function to count the number of digits in an integer 'n'.
+int reverse(int n) {
+    int rev = 0;
+    while(n > 0) {
+        int digit = n % 10;
+        rev =rev *10 + digit;
+        n = n / 10;
+    }
+    return rev;
+}
+
+int main() {
+    int N;
+    cout << "Enter a number: ";
+    cin >> N;
+    cout << "N: " << N << endl;
+
+    int new_rev = reverse(N);
+    cout << "reversed number is : " << new_rev << endl;
+
+    return 0;
+}
