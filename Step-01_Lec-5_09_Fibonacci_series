@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+void printFibonacci(int n) {
+    int first = 0, second = 1;
+
+    cout << "Fibonacci Series up to " << n << " terms: ";
+
+    for (int i = 0; i < n; i++) {
+        cout << first << " ";
+        int next = first + second;
+        first = second;
+        second = next;
+    }
+
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cout << "Enter number of terms: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Please enter a positive integer greater than 0." << endl;
+    } else {
+        printFibonacci(n);
+    }
+
+    return 0;
+}
