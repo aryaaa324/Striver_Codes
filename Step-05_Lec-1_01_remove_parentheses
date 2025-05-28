@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string removeParentheses(string s){
+    string result="";
+    int count =0;
+    for (char ch : s){
+        if(ch=="("){
+            if(count>0){
+                result= result+ch;
+            }
+            count++;
+        }else{
+            count--;
+            if(cout>0){
+                result=result+ch;
+            }
+        }
+    }
+    return result;
+}
+
+int main() {
+    string s;
+    cout << "Enter parentheses string: ";
+    cin >> s;
+
+    string res = removeOuterParentheses(s);
+    cout << "After removing outermost parentheses: " << res << endl;
+
+    return 0;
+}
