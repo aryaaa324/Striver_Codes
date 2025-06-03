@@ -1,0 +1,46 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+string largestOdd(string s)
+{
+    int n=s.size();
+    int lastOdd= -1;
+    
+    for(int i=n-1; i>=0; i--){
+        if((s[i]-0)%2!=0){
+            lastOdd=i;
+            break;
+        }
+    }
+    if(lastOdd==-1)
+    {
+        return "";
+        
+    }
+    
+    string result = s.substr(0, lastOdd+1);
+    
+    int start=0;
+    while(start<result.size() && result[start]=='0'){
+        start++;
+    }
+    return result.substr(start);
+}
+
+
+int main()
+{
+    string s;
+    cout<<"enter a string:";
+    cin>>s;
+    string output= largestOdd(s);
+    if(output==""){
+        cout<<"no largest odd can be formed ";
+    }
+    else{
+        cout<<"largest Odd : "<<output;
+    }
+}
+
+
